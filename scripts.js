@@ -1,6 +1,4 @@
-// 1 Make a function for a randomly selected rock paper or scissors for the computer 
-//(thinking to use Math.random with 0-33 -34-66 67-100 each being a corresponding selection)
-// 2 Make a prompt to allow the player to select either of the three
+
 // 3 Create logic for rock > scissors; scissors > paper; paper > rock;
 // 4 Return if win or loss 
 // 5 increments the score
@@ -14,26 +12,48 @@ if (randomNumber <= 33){
 }   else if (randomNumber >= 67) {
     computerSelection= "Scissors";
 }    else {
-    computerSelection= "Paper" ;
+    computerSelection= "Paper";
 }
 console.log(computerSelection)
+return computerSelection
+
 }
 
 
 function getPlayerChoice(){
 let playerChoice = prompt("What move will you play?")
-let playerSelection = playerChoice.toLowerCase()
-if (playerSelection === "rock"){
+let playerSelectionTxt = playerChoice.toLowerCase()
+if (playerSelectionTxt === "rock"){
     playerChoice = "Rock"
-} else if (playerSelection === "paper"){
+} else if (playerSelectionTxt === "paper"){
     playerChoice = "Paper"
-} else if (playerSelection === "scissors"){
+} else if (playerSelectionTxt === "scissors"){
     playerChoice = "Scissors"
 } else {
     alert ("Invalid selection, please try again.")
 }
 console.log(playerChoice)
+return playerChoice
 }
 
-getComputerSelection()
-getPlayerChoice()
+function playRound (playerSelection, computerSelection){
+    if (playerSelection == computerSelection){
+       return "The round is a draw";
+    } if (
+        (playerSelection == "Scissors" && computerSelection == "Rock") ||
+        (playerSelection == "Rock" && computerSelection == "Paper") ||
+        (playerSelection == "Paper" && computerSelection == "Scissors")
+    )   {
+        return `Oh no! The computer has won this round! ${computerSelection} beats ${playerSelection}!`;
+    } else if (
+        (playerSelection == "Rock" && computerSelection == "Scissors") ||
+        (playerSelection == "Paper" && computerSelection == "Rock") ||
+        (playerSelection == "Scissors" && computerSelection == "Paper")
+    )   {
+        return `Well done! You won this round! ${playerChoice} beats ${computerSelection}!` ;
+    }    
+}
+
+const playerSelection = getPlayerChoice()
+const computerSelection = getComputerSelection()
+console.log(playRound(playerSelection, computerSelection))
