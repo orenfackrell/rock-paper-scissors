@@ -7,12 +7,25 @@
 // 6 repeat for another round (look up how to use loops)
 // 7 when at 5 points declare winner
 
-function getComputerChoice() {
-    let randomNumber = Math.floor(Math.random() * 100) + 1
+let randomNumber = Math.floor(Math.random() * 100) + 1
 if (randomNumber <= 33){
     computerSelection= "Rock";
 }   else if (randomNumber >= 67) {
     computerSelection= "Scissors";
 }    else {
     computerSelection= "Paper" ;
-}}
+}
+
+let playerChoice = prompt("What move will you play?")
+let playerSelection = playerChoice.toLowerCase()
+if (playerSelection === "rock"){
+    playerChoice = "Rock"
+} else if (playerSelection === "paper"){
+    playerChoice = "Paper"
+} else if (playerSelection === "scissors"){
+    playerChoice = "Scissors"
+} else {
+    alert ("Invalid selection, please try again.")
+}
+console.log(playerChoice)
+console.log(computerSelection)
