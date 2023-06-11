@@ -50,7 +50,7 @@ function playRound (playerSelection, computerSelection){
         (playerSelection == "Paper" && computerSelection == "Rock") ||
         (playerSelection == "Scissors" && computerSelection == "Paper")
     )   {
-        return `Well done! You won this round! ${playerChoice} beats ${computerSelection}!` ;
+        return `Well done! You won this round! ${playerSelection} beats ${computerSelection}!` ;
     }    
 }
 
