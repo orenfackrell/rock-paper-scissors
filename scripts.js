@@ -1,9 +1,3 @@
-
-// 3 Create logic for rock > scissors; scissors > paper; paper > rock;
-// 4 Return if win or loss 
-// 5 increments the score
-// 6 repeat for another round (look up how to use loops)
-// 7 when at 5 points declare winner
 function getComputerSelection (){
 let randomNumber = Math.floor(Math.random() * 100) + 1;
 let computerSelection = undefined; 
@@ -55,11 +49,25 @@ function playRound (playerSelection, computerSelection){
 }
 
 function game(){
-    for (let i = 0; i < 5; i++){
+    playerScore = 0
+    computerScore = 0
+    for ( i = 0; i < 5; i++){
     let playerSelection = getPlayerChoice();
     let computerSelection = getComputerSelection();
     console.log(playRound(playerSelection, computerSelection))
-    }
+    if (playRound(playerSelection, computerSelection) == `Well done! You won this round! ${playerSelection} beats ${computerSelection}!`){;
+    playerScore++
+}   else if (playRound(playerSelection, computerSelection) == `Oh no! The computer has won this round! ${computerSelection} beats ${playerSelection}!`){;
+    computerScore++
+} else (playerScore++, computerScore++)
+} let winner = 0
+if (computerScore == playerScore){
+    winner = "Its a tie! Refresh the browser to play again!"
+} else if (computerScore > playerScore){
+    winner = "You lost! Refresh the browser to play again!"
+} else {
+    winner = "You win! Refresh the browser to play again!"
+} 
+console.log(winner)
 }
-
 game()
