@@ -49,44 +49,41 @@
         return `Well done! You won this round! ${playerSelection} beats ${computerSelection}!`;
     }    
 }
+
   options.forEach(button => button.addEventListener('click', () =>{
 
   playerSelection = button.textContent;
   computerSelection = getComputerSelection();
   playerText.textContent = `Player: ${playerSelection}`;
   computerText.textContent = `Computer: ${computerSelection}`;
-
-  console.log(playerSelection);
-  console.log(computerSelection);
   
   playRound(playerSelection, computerSelection)
-  
+
   if (playRound(playerSelection, computerSelection) ===  
     `Oh no! The computer has won this round! ${computerSelection} beats ${playerSelection}!`){
-      computerScore++
+      computerScore++;
+      roundResult = `Oh no! The computer has won this round! ${computerSelection} beats ${playerSelection}!`;
     }
   else if (playRound(playerSelection, computerSelection) ===  
     `Well done! You won this round! ${playerSelection} beats ${computerSelection}!`){
-      playerScore++
+      playerScore++;
+      roundResult = `Well done! You won this round! ${playerSelection} beats ${computerSelection}!`;
     }
+  else {
+    roundResult = "The round is a draw";
+  }
+
     scoreTextPlayer.textContent = `${playerScore}` ;
     scoreTextComputer.textContent = `${computerScore}` ;
-    
-    
-  console.log(playRound(playerSelection, computerSelection))
-  console.log(playerScore)
-  console.log(computerScore)
-    
-  
-  let winner = null
-    
-  if (computerScore >= 5){
-    winner = "You lost! Refresh the browser to play again!"
+    resultText.textContent = `${roundResult}`;
+
+
+   if (computerScore >= 5){
+    alert("You lost! Refresh the browser to play again!") 
     } 
 
     else if (playerScore >= 5){
-    winner = "You win! Refresh the browser to play again!"
+    alert("You win! Refresh the browser to play again!")
     }   
-  resultText.textContent = `${winner}`
- 
   }));
+    
