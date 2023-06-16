@@ -1,0 +1,23 @@
+*{
+    border: 1px solid red;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+}
+
+h1,
+p {
+    text-align: center;
+}
+
+.playerButtons,
+.tab,
+.scores,
+.gameState {
+    display: flex;
+    justify-content: space-around;
+}
+
+.tab {
+    flex-direction: column;
+}
+
