@@ -1,6 +1,5 @@
 *{
     font-family: 'Courier New', Courier, monospace;
-    color: black;
 }
 
 h1,
@@ -8,15 +7,59 @@ p {
     text-align: center;
 }
 
+.header,
 .playerButtons,
 .tab,
 .scores,
 .gameState {
     display: flex;
     justify-content: space-around;
+    margin: 0rem 5rem;
 }
 
-.tab {
+.tab,
+.header {
     flex-direction: column;
 }
 
+img {
+    border-radius: 45px;
+    width: 120px;
+    object-fit: cover;
+}
+
+button {
+    cursor: pointer;
+    color: white;
+}
+
+.rock,
+.paper,
+.scissors {
+    border: 0px;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: medium;
+}
+
+.rock:hover,
+.paper:hover,
+.scissors:hover {
+    transform: scale(1.02);
+}
+
+.rock {
+    background-image: linear-gradient(140deg, rgb(56, 10, 12), rgb(205, 25, 27)45%, rgb(56, 10, 12));
+}
+
+.paper {
+    background-image: linear-gradient(140deg, rgb(15, 50, 71), rgb(11, 171, 223)47%, rgb(15, 50, 71));
+}
+
+.scissors {
+    background-image: linear-gradient(140deg, rgb(61, 46, 12), rgb(239, 210, 46)45%, rgb(61, 46, 12));
+}
+
+.tabText {
+    color: white;
+}
