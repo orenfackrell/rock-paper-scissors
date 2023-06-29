@@ -1,6 +1,18 @@
 *{
     font-family: 'Kanit', Courier, monospace;
 }
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.flexWrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
 
 h1,
 p {
@@ -15,10 +27,12 @@ p {
     display: flex;
     justify-content: space-around;
     margin: 0rem 5rem;
+    min-width: 80vh;
 }
 
 .tab,
-.header {
+.header,
+.content {
     flex-direction: column;
 }
 
@@ -62,4 +76,9 @@ button {
 
 .tabText {
     color: white;
+}
+
+.footer {
+    align-items: end;
+    margin-top: auto;
 }
